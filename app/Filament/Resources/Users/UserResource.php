@@ -15,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Filament\Forms\Components\Toggle;
 
 class UserResource extends Resource
 {
@@ -27,6 +28,14 @@ class UserResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);
+            schema([
+            Toggle::make('is_vendor')
+                ->label('Vendor Account')
+                ->onColor('success')
+                ->offColor('gray')
+                ->onIcon('heroicon-m-check')
+                ->offIcon('heroicon-m-x'),
+        ]);
     }
 
     public static function infolist(Schema $schema): Schema

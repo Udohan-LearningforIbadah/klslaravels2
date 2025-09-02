@@ -18,4 +18,6 @@ class EditUser extends EditRecord
             DeleteAction::make(),
         ];
     }
-}
+
+        // Hooks like beforeSave(), afterSave(), beforeDelete(), etc.
+        }
